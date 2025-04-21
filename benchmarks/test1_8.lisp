@@ -1,0 +1,10 @@
+(let ((x 2))
+(let ((y 3))
+(let ((z (+ x y)))
+(let ((t (+ x y)))
+(let ((r (+ x y)))
+(let ((s (+ x y)))
+(let ((p (+ x y)))
+(print (+ p s))
+
+)))))))

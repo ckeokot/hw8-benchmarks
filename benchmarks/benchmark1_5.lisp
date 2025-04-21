@@ -1,0 +1,1 @@
+(define (heavy-arith-loop n) (if (= n 0) 0 (+ (+ 3 3) (+ (- 10 5) (heavy-arith-loop (- n 1)))))) (print (heavy-arith-loop 10000000))

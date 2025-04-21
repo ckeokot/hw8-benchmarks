@@ -1,0 +1,1 @@
+(print (let ((flourcup 2)) (let ((sugarcup 1)) (let ((totaldry (+ flourcup sugarcup))) (let ((totaltwice (+ totaldry totaldry))) (+ totaltwice flourcup))))))

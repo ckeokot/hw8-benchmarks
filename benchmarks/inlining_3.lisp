@@ -1,0 +1,1 @@
+(define (sum n) (if (zero? 0) 0 (+ n (sum (sub1 n))))) (print (sum (+ 1 (+ 2 3))))

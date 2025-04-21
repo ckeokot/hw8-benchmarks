@@ -1,0 +1,1 @@
+(print (let ((x (read-num))) (let ((y 3)) (+ (- (+ x y) 2) (+ (- (+ (+ x y) 2) y) (+ (+ x y) 2))))))

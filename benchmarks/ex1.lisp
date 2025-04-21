@@ -1,0 +1,1 @@
+(define (f i) (if (= i 0) 0 (+ 69 (f (- i 1))))) (define (g i) (+ (f i) (+ (f i) (f i)))) (print (g 10000))

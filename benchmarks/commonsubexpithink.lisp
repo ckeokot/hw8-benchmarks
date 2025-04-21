@@ -1,0 +1,1 @@
+(define (f x y) (if (< y x) (+ y (f x (+ y 1))) y)) (define (g x y) (f x y)) (define (h x y) (g x y)) (print (h 12500 5))

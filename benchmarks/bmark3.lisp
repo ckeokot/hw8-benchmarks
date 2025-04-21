@@ -1,0 +1,1 @@
+(define (double x) (+ (self x) (self x))) (define (quadruple x) (double (double x))) (define (self x) x) (print (+ (quadruple 3) (quadruple 3)))

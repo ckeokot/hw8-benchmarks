@@ -1,0 +1,1 @@
+(print (let ((x 5)) (let ((y (+ x 1))) (let ((z (= y 6))) (if z (- (+ 2 (add1 0)) 1) (+ (sub1 9) 3))))))

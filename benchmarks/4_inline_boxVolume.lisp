@@ -1,0 +1,6 @@
+(define (sideArea s)
+	(+ (+ (+ (+ s s) s) s) s))
+(define (boxVolume s)
+	(let ((area (sideArea s)))
+		(+ (+ (+ (+ area area) area) area) area)))
+(print (boxVolume 5))

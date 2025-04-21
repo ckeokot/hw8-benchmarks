@@ -1,0 +1,1 @@
+(define (many-numbers x) (add1 (sub1 (add1 (sub1 (+ 1 (+ 2 (+ 3 (+ 4 (+ x (add1 (add1 (sub1 6))))))))))))) (print (many-numbers 3))

@@ -1,0 +1,10 @@
+(define (test)
+  (let ((a 5))
+    (let ((b 10))
+      (let ((c 15))
+        (let ((d (+ a b)))
+          (let ((e (+ c d)))
+            (let ((f (+ d e)))
+              (+ (+ a (+ b c)) (+ d (+ e f))))))))))
+
+(test) 

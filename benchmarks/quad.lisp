@@ -1,0 +1,1 @@
+(define (x4 x) (+ x (+ x (+ x x)))) (print (x4 100))

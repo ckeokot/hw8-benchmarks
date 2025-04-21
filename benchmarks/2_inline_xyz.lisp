@@ -1,0 +1,5 @@
+(define (add1 x) (+ x 1))
+(define (add2 y) (+ y 2))
+(define (add3 z) (+ z 100))
+(define (sumUp a b c)(+ (add1 a) (+ (add2 b) (add3 c))))
+(print (sumUp 60 70 80))

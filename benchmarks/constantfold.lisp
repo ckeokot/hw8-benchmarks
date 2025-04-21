@@ -1,0 +1,21 @@
+(define (f x)
+    (+ 2 x)
+)
+
+(define (g x)
+    (- (+ 100 (+ (sub1 5) (add1 3))) (add1 x))
+)
+
+(let ((x 5))
+    (let ((y 3))
+        (do
+            (print (f x))
+            (newline)
+            (print (g y))
+            (newline)
+            (print (+ (sub1 (- 5 (+ 1 (sub1 1)))) (add1 (+ (- 8 2) (+ 3 (add1 6))))))
+            (newline)
+            (print (+ (sub1 (- (read-num) (+ 1 (sub1 1)))) (add1 (+ (- 8 2) (+ 3 (add1 6))))))
+        )
+    )
+)

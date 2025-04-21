@@ -1,0 +1,1 @@
+(print (let ((first 67)) (let ((second (+ (+ 48 first) 20))) (+ (+ 20 (+ first 48)) second))))

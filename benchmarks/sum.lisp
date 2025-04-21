@@ -1,0 +1,1 @@
+(define (sum x) (if (zero? x) 0 (+ x (sum (- x 1))))) (sum 1000000000)

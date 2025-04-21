@@ -1,0 +1,1 @@
+(define (f x y) (pair x y)) (define (g x y z) (pair (f x y) z)) (define (h x y t) (if (= t 0) (g x y 0) (f (h (+ x t) (- y t) (sub1 t)) t))) (print (right (h 10000 10000 10000)))

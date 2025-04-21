@@ -1,0 +1,5 @@
+(let ((x 3))
+    (let ((y x))
+        (let ((y (+ 5 y)))
+            (+ (let ((x y))
+                (print (+ x y))) x))))

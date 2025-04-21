@@ -1,0 +1,33 @@
+(define (addtwo x) (add1 (+ x 1)))
+(define (addfour y) (add1 (add1 (addtwo y))))
+(define (addeight z) (add1 (add1 (+ (addtwo z) (addfour z)))))
+(define (addsixteen a) (addeight (addeight a)))
+(define (addthirtytwo b) (addsixteen (addsixteen b)))
+(define (addsixtyfour c) (addthirtytwo (addthirtytwo c)))
+
+(define (test a b)
+    (let ((x (addsixtyfour b)))
+        (let ((y (addeight a)))
+            (if (= a 0)
+                (if (= b 0)
+                    (do
+                        (print (addsixtyfour a))
+                        (print (addthirtytwo b))
+                    )
+                    (do
+                        (print (addsixteen a))
+                        (print (addsixteen b))
+                        (test a (sub1 b))
+                    )
+                )
+                (do
+                    (print (addtwo a))
+                    (print (addfour b))
+                    (test (- a 1) b)
+                )
+            )
+        )
+    )
+)
+
+(test 7777 5555)

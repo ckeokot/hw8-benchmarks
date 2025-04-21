@@ -1,0 +1,10 @@
+(define (double x) (+ x x))
+(define (add-const x) (+ (+ x 5) (+ 10 3)))
+
+(let ((input (read-num)))
+  (let ((base (+ (+ 10 5) (+ 10 5))))
+    (let ((calc1 (double (add-const input))))
+      (let ((calc2 (double (add-const base))))
+        (let ((result1 (+ (+ calc1 calc2) (+ calc1 calc2))))
+          (let ((result2 (+ (+ input base) (+ input base))))
+            (+ result1 result2)))))))

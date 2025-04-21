@@ -1,0 +1,1 @@
+(define (f x) (left (pair (- x 3) 2))) (print (+ (read-num) (f 3)))

@@ -1,0 +1,1 @@
+(define (f x) (+ x 2)) (define (g x) (+ (f x) (f x))) (define (h x) (+ (g x) (g x))) (define (i x) (- (h x) 2)) (print (i 69420))

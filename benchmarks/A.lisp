@@ -1,0 +1,5 @@
+(define (f x y) (+ x (+ x (+ x (+ y 3)))))
+(let ((x 2)) 
+  (let ((y 3)) 
+    (let ((x (+ 3 y))) 
+      (print (f (+ 3 x) (+ 4 y))))))

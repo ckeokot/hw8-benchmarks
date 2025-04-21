@@ -1,0 +1,11 @@
+(define (test)
+  (let ((a 5))
+    (let ((b 10))
+      (let ((c 15))
+        (let ((expr1 (+ (+ a b) (- c b))))
+          (let ((expr2 (+ (+ a b) (- c b))))
+            (let ((expr3 (+ (+ a b) (- c b))))
+              (let ((expr4 (+ (+ a b) (- c b))))
+                (+ (+ expr1 expr2) (+ expr3 expr4))))))))))
+
+(test) 

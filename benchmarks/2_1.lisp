@@ -1,0 +1,11 @@
+(define (main)
+  (let ((a 173))
+    (let ((b 251))
+      (let ((c 367))
+        (let ((x (+ a b)))
+          (let ((y (+ b c)))
+            (let ((z (+ a b)))
+              (let ((w (+ b c)))
+                (print (+ (+ x y) (+ z w)))))))))))
+
+(main) 

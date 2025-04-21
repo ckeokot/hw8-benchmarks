@@ -1,0 +1,1 @@
+(define (f x y z) (- (+ x y) z)) (define (g x y z) (if (< (f x y z) 100000) (g x (+ y 1) z) (f x y z))) (print (pair (g 0 0 0) (let ((x 5)) (let ((y (+ x 10))) (let ((z (- (- x 2) y))) (let ((x (+ z x))) (f x y z)))))))

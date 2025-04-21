@@ -1,0 +1,25 @@
+(define (const-test x)
+  (let ((const1 (+ 10 5)))
+    (let ((const2 (- const1 5)))
+      (let ((var1 (+ x 1)))
+        (if (< const2 20)
+          (let ((res1 (+ const1 const2)))
+            (+ res1 var1))
+          0)))))
+
+(define (optimize-me n)
+  (if (< (+ 1 2) (+ 2 2))
+    100
+    (if (< n 0)
+      (+ (+ 1 2) (+ 3 4))
+      (+ n (+ 5 5)))))
+
+(do
+  (print (const-test 5))
+  (newline)
+  (print (const-test 10))
+  (newline)
+  (print (optimize-me 20))
+  (newline)
+  (print (optimize-me -5))
+  (newline))

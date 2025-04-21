@@ -1,0 +1,1 @@
+(let ((x (read-num))) (+ (add1 x) (left (pair (add1 x) (+ 3 (add1 x))))))

@@ -1,0 +1,5 @@
+(let ((num1 9))
+  (let ((num2 11))
+    (if (= (add1 num1) (sub1 num2))
+        (print 1)
+        (print 0))))

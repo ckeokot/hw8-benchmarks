@@ -1,0 +1,11 @@
+(define (const-prop)
+  (let ((a (+ 1000 234)))
+    (let ((b (- a 1)))
+      (let ((c (+ b 1)))
+        (let ((d (- c 1)))
+          (let ((e (+ d 1)))
+            (let ((f (+ e 0)))
+              (let ((g (+ f 0)))
+                (print g)))))))))
+
+(const-prop)

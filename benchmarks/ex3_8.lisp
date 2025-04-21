@@ -1,0 +1,1 @@
+(print (- (add1 6) (+ (left (pair (+ 2 3) (read-num))) (- 3 (read-num)))))

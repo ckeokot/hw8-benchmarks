@@ -1,0 +1,1 @@
+(define (f x) (+ x 7)) (define (test-inline x) (+ (f x) (+ (f x) (+ (f x) (+ (f x) (f x))))) ) (print (test-inline 3))

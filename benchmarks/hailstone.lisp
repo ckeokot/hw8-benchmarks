@@ -1,0 +1,28 @@
+(define (badMultiplication a b)
+  (if (zero? b)
+      0
+      (+ a (badMultiplication a (sub1 b)))
+  )
+)
+(define (badDivision a b)
+  (if (zero? a)
+      0
+      (+ 1 (badDivision (- a b) b))
+  )
+)
+(define (even? n)
+    (if (zero? n)
+        true
+        (not (even? (sub1 n)))
+    )
+)
+(define (hailstone n)
+    (if (= n 1)
+        1
+        (if (even? n)
+            (pair n (hailstone (badDivision n 2)))
+            (pair n (hailstone (+ (badMultiplication 3 n) 1)))
+        )
+    )
+)
+(print (hailstone 871))

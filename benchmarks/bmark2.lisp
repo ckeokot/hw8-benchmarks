@@ -1,0 +1,1 @@
+(define (double x) (+ x x)) (define (triple x) (+ (double x) x)) (print (+ (triple 2) (triple 2)))

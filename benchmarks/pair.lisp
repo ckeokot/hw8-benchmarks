@@ -1,0 +1,13 @@
+(define (f x)
+  (let ((p1 (pair x 5)))
+    (let ((l (left p1)))
+      (let ((r (right p1)))
+        (let ((p2 (pair r l)))
+          (let ((p3 (pair (left p2) (right p2))))  
+            (if (pair? p3)
+                (if (pair? p1)                    
+                    (left p3)
+                    (right p3))
+                0)))))))
+
+(f 1)

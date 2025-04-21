@@ -1,0 +1,1 @@
+(define (f) (- 29 3)) (define (g x) (+ x (f))) (define (h x) (+ x (g (f)))) (h 2)

@@ -1,0 +1,1 @@
+(define (redundant-subexpr n) (if (= n 0) 0 (+ (+ (+ n n) (+ (+ n n) (+ n n))) (redundant-subexpr (- n 1))))) (print (redundant-subexpr 5000000))
