@@ -53,7 +53,7 @@ def bench(passes: "list[str]"):
                 shell=True,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
-                universal_newlines=True,
+                universal_newlines=False,
             )
             end = time.perf_counter()
             runs.append(end - start)
