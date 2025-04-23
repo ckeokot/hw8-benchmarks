@@ -11,6 +11,7 @@ import multiprocessing
 from tqdm import tqdm
 
 N = 10
+TIMEOUT = 15
 
 
 def input_file(benchmark):
@@ -33,8 +34,12 @@ def compile_benchmark(args):
             check=True,
             stdout=subprocess.PIPE, # Capture stdout
             stderr=subprocess.PIPE, # Capture stderr
+            timeout=TIMEOUT,
         )
         return (benchmark, True, None) # Indicate success
+    except subprocess.TimeoutExpired:
+        error_message = f"Error compiling {benchmark}: timed out after {TIMEOUT} seconds."
+        return (benchmark, False, error_message) # Indicate failure and provide error message
     except subprocess.CalledProcessError as e:
         error_message = f"Error compiling {benchmark}:\nSTDOUT:\n{e.stdout.decode() if e.stdout else 'N/A'}\nSTDERR:\n{e.stderr.decode() if e.stderr else 'N/A'}"
         return (benchmark, False, error_message) # Indicate failure and provide error message
@@ -86,17 +91,28 @@ def bench(passes: "list[str]"):
             stdin = open(input_path).read()
         for i in range(N):
             start = time.perf_counter()
-            subprocess.run(
-                run_cmd,
-                input=stdin,
-                shell=True,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                universal_newlines=False,
-            )
-            end = time.perf_counter()
-            runs.append(end - start)
-        results[benchmark] = sum(runs) / len(runs)
+            try:
+                process = subprocess.run(
+                    run_cmd,
+                    input=stdin,
+                    shell=True,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                    universal_newlines=False,
+                    timeout=TIMEOUT,
+                )
+                end = time.perf_counter()
+                runs.append(end - start)
+            except subprocess.TimeoutExpired:
+                print(f"Warning: Benchmark '{benchmark}' run {i+1}/{N} timed out after {TIMEOUT} seconds.", file=sys.stderr)
+            except Exception as e: # Catch other potential errors during run
+                 print(f"Warning: Benchmark '{benchmark}' run {i+1}/{N} failed: {e}", file=sys.stderr)
+
+        if runs:
+             results[benchmark] = sum(runs) / len(runs)
+        else: # Handle case where all runs timed out or failed
+             print(f"Warning: Benchmark '{benchmark}' had no successful runs out of {N}.", file=sys.stderr)
+             results[benchmark] = float('inf') # Use infinity to represent timeout/failure
     return results
 
 
