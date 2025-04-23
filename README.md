@@ -12,7 +12,13 @@ Here's how to get started running benchmarks for Homework 8:
 git clone git@github.com:berkeley-cs164-sp25/hw8-benchmarks.git
 ```
 
-2. In the new `hw8-benchmarks` directory (not the `benchmarks` subdirectory), make a `config.json` file. This file should be a JSON-formatted dictionary where the keys are configurations and the values are lists of pass names. For example, it might look like:
+2. Ensure that you have `tqdm` installed by running:
+
+```sh
+pip install tqdm
+```
+
+3. In the new `hw8-benchmarks` directory (not the `benchmarks` subdirectory), make a `config.json` file. This file should be a JSON-formatted dictionary where the keys are configurations and the values are lists of pass names. For example, it might look like:
 
 ```json
 {
@@ -24,7 +30,7 @@ git clone git@github.com:berkeley-cs164-sp25/hw8-benchmarks.git
 
 (The configuration names are just to help you distinguish what is actually being run, so they can be anything you'd like!)
  
-3. Run the benchmark script. It will run each benchmark 10 times using each specified configuration and write the results to `results.csv`.
+4. Run the benchmark script. It will run each benchmark 10 times using each specified configuration and write the results to `results.csv`.
 
 ```sh
 python3 bench.py
