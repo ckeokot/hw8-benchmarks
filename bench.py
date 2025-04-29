@@ -11,7 +11,7 @@ import multiprocessing
 from tqdm import tqdm
 
 N = 10
-TIMEOUT = 15
+TIMEOUT = 30
 
 
 def input_file(benchmark):
