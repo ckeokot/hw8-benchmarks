@@ -1,4 +1,4 @@
-# Benchmarks for Homework 8
+# Improved Benchmarks for Homework 8
 
 Check out the Homework 8 assignment for details on how to submit benchmarks to this repository!
 
@@ -9,7 +9,7 @@ Here's how to get started running benchmarks for Homework 8:
 1. Clone this respository into your Homework 8 repository:
 
 ```sh
-git clone git@github.com:berkeley-cs164-sp25/hw8-benchmarks.git
+git clone git@github.com:ckeokot/hw8-benchmarks.git
 ```
 
 2. Ensure that you have `tqdm` installed by running:
@@ -35,6 +35,4 @@ pip install tqdm
 ```sh
 python3 bench.py
 ```
- 
-Most importantly, have fun!
 
